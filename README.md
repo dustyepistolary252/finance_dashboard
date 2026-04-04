@@ -1,98 +1,316 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 💰 Finance Dashboard Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A **NestJS backend system** for managing users, financial records, role-based access control, and dashboard analytics.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+# 🧾 Project Overview
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This backend powers a finance dashboard where users interact with financial data based on their roles.
 
-## Project setup
+### ✅ Key Capabilities
+
+* User registration and login
+* JWT-based authentication
+* Role-based access control (RBAC)
+* User management (Admin)
+* Financial records CRUD
+* Filtering and pagination
+* Dashboard analytics
+* Validation and error handling
+* Swagger API documentation
+* MySQL data persistence
+
+---
+
+# 🚀 Features
+
+* JWT Authentication with secure login/register
+* RBAC with roles: **VIEWER, ANALYST, ADMIN**
+* Admin-only user management
+* Finance records CRUD operations
+* Advanced filtering:
+
+  * type
+  * category
+  * date range
+  * userId (admin only)
+* Pagination support
+* Dashboard analytics:
+
+  * total income
+  * total expenses
+  * net balance
+  * category breakdown
+  * recent transactions
+  * monthly trends
+* Global validation (ValidationPipe)
+* Rate limiting (Throttler)
+* Swagger API documentation
+
+---
+
+# 🏗️ Tech Stack
+
+* **Framework:** NestJS
+* **Language:** TypeScript
+* **Database:** MySQL
+* **ORM:** TypeORM
+* **Authentication:** JWT + Passport
+* **Validation:** class-validator + class-transformer
+* **API Docs:** Swagger
+* **Security:** JWT Guard, Roles Guard, Throttler
+* **Package Manager:** npm
+
+---
+
+# 📁 Project Structure
 
 ```bash
-$ npm install
+finance-dashboard/
+├── src/
+│   ├── auth/
+│   ├── common/
+│   │   ├── decorators/
+│   │   └── guards/
+│   ├── dashboard/
+│   ├── finance/
+│   ├── users/
+│   ├── app.module.ts
+│   └── main.ts
+├── test/
+├── .env
+├── package.json
+└── README.md
 ```
 
-## Compile and run the project
+---
+
+# ⚙️ Setup Instructions
+
+## 1. Clone Repository
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone https://github.com/itsharsh56/finance_dashboard.git
+cd finance_dashboard
 ```
 
-## Run tests
+## 2. Install Dependencies
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
+## 3. Setup Environment Variables
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Create `.env` file:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+```env
+PORT=3000
+
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASS=your_mysql_password
+DB_NAME=finance_dashboard
+
+JWT_SECRET=your_super_secret_key
+JWT_EXPIRES_IN=1d
+```
+
+## 4. Create Database
+
+```sql
+CREATE DATABASE finance_dashboard;
+```
+
+## 5. Run Project
+
+### Development
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm run start:dev
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### Production
 
-## Resources
+```bash
+npm run build
+npm run start:prod
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+Server runs on:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```
+http://localhost:3000
+```
 
-## Support
+---
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# 📡 API Endpoints
 
-## Stay in touch
+## 🔐 Auth
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+| Method | Endpoint       | Access | Description         |
+| ------ | -------------- | ------ | ------------------- |
+| POST   | /auth/register | Public | Register user       |
+| POST   | /auth/login    | Public | Login and get token |
 
-## License
+---
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## 👤 Users
+
+| Method | Endpoint          | Access        | Description         |
+| ------ | ----------------- | ------------- | ------------------- |
+| GET    | /users/profile    | Authenticated | Current user        |
+| GET    | /users            | ADMIN         | Get all users       |
+| POST   | /users            | ADMIN         | Create user         |
+| PATCH  | /users/:id/role   | ADMIN         | Update role         |
+| PATCH  | /users/:id/status | ADMIN         | Activate/deactivate |
+
+---
+
+## 💰 Finance
+
+| Method | Endpoint     | Access         |
+| ------ | ------------ | -------------- |
+| POST   | /finance     | ADMIN          |
+| GET    | /finance     | ANALYST, ADMIN |
+| GET    | /finance/:id | ANALYST, ADMIN |
+| PATCH  | /finance/:id | ADMIN          |
+| DELETE | /finance/:id | ADMIN          |
+
+---
+
+## 📊 Dashboard
+
+| Method | Endpoint           | Access    |
+| ------ | ------------------ | --------- |
+| GET    | /dashboard/summary | All roles |
+
+---
+
+# 🔐 Authentication
+
+Use JWT token:
+
+```
+Authorization: Bearer <your-token>
+```
+
+### Example Response
+
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIs..."
+}
+```
+
+---
+
+# 📘 Swagger API Docs
+
+```
+http://localhost:3000/api
+```
+
+### How to Use
+
+1. Open `/api`
+2. Click **Authorize**
+3. Enter:
+
+```
+Bearer <token>
+```
+
+---
+
+# 🧠 Design Decisions
+
+* Modular architecture (NestJS best practices)
+* RBAC using Guards + Decorators
+* QueryBuilder for efficient aggregation
+* Global validation for data safety
+* Separation of concerns (controller/service/entity/dto)
+
+---
+
+# 🔍 Features Explanation
+
+## User & Role Management
+
+* Admin controls users
+* Roles define permissions
+* Inactive users cannot login
+
+## Finance Management
+
+* Each record linked to user
+* Full CRUD supported
+* Soft delete implemented
+
+## Filtering & Pagination
+
+* Query-based filtering
+* Efficient data retrieval
+
+## Dashboard Analytics
+
+* Aggregation queries
+* Business-level insights
+
+---
+
+# 🛡️ Security
+
+* JWT authentication
+* Role-based access
+* Password hashing (bcrypt)
+* Rate limiting
+* DTO validation
+
+---
+
+# 🧪 Testing
+
+```bash
+npm run test
+npm run test:e2e
+npm run test:cov
+```
+
+---
+
+# 🚀 Future Improvements
+
+* Refresh tokens
+* Redis caching
+* Docker deployment
+* CI/CD pipeline
+* Audit logging
+* Advanced search
+
+---
+
+# 📌 Submission Notes
+
+This project fulfills:
+
+* User & role management
+* Financial records handling
+* Dashboard analytics
+* Access control
+* Validation & persistence
+* Clean architecture
+
+---
+
+# 👨‍💻 Author
+
+**Harsh Verma**
+
+* GitHub: https://github.com/itsharsh56
+* LinkedIn: https://linkedin.com/in/harshvr
+
+---
