@@ -308,7 +308,7 @@ This project fulfills:
 
 # 👨‍💻 Author
 
-**Harsh Verma**
+**Harsh**
 
 * GitHub: https://github.com/itsharsh56
 * LinkedIn: https://linkedin.com/in/harshvr
